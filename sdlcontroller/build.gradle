@@ -3,6 +3,16 @@ plugins {
     id 'maven-publish'
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.ferdinandsilva'
+            artifactId = 'sdlcontroller'
+            version = '1.0.1'
+        }
+    }
+}
+
 android {
     namespace 'com.ferdinandsilva.sdlcontroller'
     compileSdk 31
