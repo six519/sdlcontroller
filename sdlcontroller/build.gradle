@@ -3,16 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.ferdinandsilva'
-            artifactId = 'sdlcontroller'
-            version = '1.0.1'
-        }
-    }
-}
-
 android {
     namespace 'com.ferdinandsilva.sdlcontroller'
     compileSdk 31
@@ -32,8 +22,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -44,4 +34,17 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.six519'
+                artifactId = 'sdlcontroller'
+                version = '1.0.2'
+            }
+        }
+    }
 }
