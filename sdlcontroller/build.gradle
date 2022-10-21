@@ -3,6 +3,9 @@ plugins {
     id 'maven-publish'
 }
 
+group = 'com.github.six519'
+version = '1.0.4'
+
 android {
     namespace 'com.ferdinandsilva.sdlcontroller'
     compileSdk 31
@@ -43,7 +46,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.six519'
                 artifactId = 'sdlcontroller'
-                version = '1.0.3'
+                version = '1.0.4'
             }
         }
     }
