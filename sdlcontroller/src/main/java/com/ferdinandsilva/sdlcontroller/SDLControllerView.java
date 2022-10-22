@@ -18,6 +18,7 @@ public class SDLControllerView extends ConstraintLayout {
         super(context);
         inflate(context, R.layout.gamepad, this);
         this.vg = vg;
+        this.vg.addView(this);
 
         ImageView leftButton = (ImageView) findViewById(R.id.left_button);
         ImageView rightButton = (ImageView) findViewById(R.id.right_button);
